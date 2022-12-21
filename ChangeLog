@@ -1,0 +1,1129 @@
++ From 1.9.0 to 1.9.1
+
+    0a28db96 2021-06-26 Jasem Mutlaq         Make it build on Windows
+    24af1873 2021-06-25 Florian Steffen      CGX-L wasn't supported for last align command (#1498)
+    9c5c95c8 2021-06-25 Jarno Paananen       Add object azimuth and altitude to FITS headers (#1497)
+    7b81c821 2021-06-22 Jasem Mutlaq         Fix lunar and solar order. Fixes #1494
+    a761417a 2021-06-22 Jasem Mutlaq         Add function to get current switch label from config
+    d7af9d63 2021-06-23 Efstathios Chrysikos Pegasus Add new Device  USB Control HUB (#1496)
+    15fb4e1b 2021-06-23 Karl Rees            PMC8 Driver v0.4 (Improved manual slewing, guiding, and other features) (#1495)
+    c754c63f 2021-06-21 murveit              Update Rainbow Focuser API Comments, Follow Updated API (#1493)
+    83eef2d5 2021-06-21 Jasem Mutlaq         Add Asynchrnous to true when calling the guide method as pointed out by @interplanetarychris
+    2e089560 2021-06-20 Jasem Mutlaq         Try to send the guide pulses asynchronously to TheSkyX
+    441c6976 2021-06-20 Jarno Paananen       Fix OTA azimuth calculation for dome slaving (#1492)
+    7b4df520 2021-06-19 Jasem Mutlaq         Removed custom parking position since driver does not support it. Removed disclaimer message since ALL drivers should be used at the users own risk,..
+    23b5602b 2021-06-19 murveit              fix rainbow astro focuser driver (#1491)
+    b68dc3ba 2021-06-19 Nekomeshi            Fix crash on connecting to indi_skywatcherAltAzMount without setting telescope and guider info. (#1490)
+    37f50166 2021-06-16 Jasem Mutlaq         Fix solar and lunar tracking rates order. Fixes #1489
+    14876a1b 2021-06-16 Jasem Mutlaq         set parent in basedevice for property elements
+    e5494e1c 2021-06-15 Jasem Mutlaq         Update timeout to 5s
+    d5f234e7 2021-06-15 Nekomeshi            In this commit, a crash at jpeg extraction is fixed. (#1487)
+    1332e24e 2021-06-13 james-lan            OnStep: Fix issue with Unparking where it can get stuck if the dome lock interferes by simply processing every update (and makes things cleaner!) (#..
+    8d3b0158 2021-06-13 Jasem Mutlaq         Add more try catch blocks to catch string to numeric conversion errors
+    85938db1 2021-06-13 Jasem Mutlaq         Try up to three times to read the encoder position
+    8b8d776c 2021-06-13 james-lan            OnStep: Reduce latency by basic checks to restrict some things by version of OnStep (#1486)
+    50883caf 2021-06-12 Jasem Mutlaq         Fix crash caused by client not calling serverDisconnected. Fixes #1482
+    3f1947b5 2021-06-11 Pavle Gartner        Deep Sky Dad Field Rotator 1 indi driver (#1485)
+    0a7bfdca 2021-06-10 Jasem Mutlaq         Replace legacy timer with INDI::Timer
+    62231e55 2021-06-10 Jasem Mutlaq         Add tcdrain as suggest to Robert Brown
+    4d51a105 2021-06-10 Jasem Mutlaq         Linux Kernel cannot map dentical USB-serial devices to /dev/serial/by-id. Therefore, INDI serial port detector might not report available serial por..
+    1fda5399 2021-06-07 Jasem Mutlaq         Add missing header for MacOS
+    8f77661f 2021-06-07 Jasem Mutlaq         Fix compile on MacOS
+    0971a52e 2021-06-07 Jasem Mutlaq         Use encoders for parking
+    58295188 2021-06-07 Jasem Mutlaq         Reset tracking rate after slew motion is done
+    40c0d12b 2021-06-07 Jasem Mutlaq         Motion NSWE support
+    9ea38600 2021-06-07 Jasem Mutlaq         Correct RADE from Encoders
+    a81b668f 2021-06-07 Jasem Mutlaq         Fix typo
+    ee837aa0 2021-06-07 Jasem Mutlaq         use better description for mount types. Correct HA encoder calculations
+    c35010f8 2021-06-07 Jasem Mutlaq         Get acceleration and velocity on startup
+    f7d46432 2021-06-07 Jasem Mutlaq         Use range to control values
+    b82c0c7f 2021-06-05 Jasem Mutlaq         Encoders are read-write
+    5a7d10fd 2021-05-26 Jasem Mutlaq         Encoder to RADE fix
+    e678689d 2021-05-26 Jasem Mutlaq         Try different encoder to celestial mapping
+    d12bd76e 2021-05-26 Jasem Mutlaq         Opps fix format again
+    e0335bf1 2021-05-26 Jasem Mutlaq         define encoders and fix format
+    a3c4ace4 2021-05-26 Jasem Mutlaq         Do not block updateLocation even if values equal last recorded values
+    51ee9e9e 2021-05-25 Jasem Mutlaq         Update to compile with latest INDI. Account for slew time
+    80e8e3d0 2021-05-20 Jasem Mutlaq         Hour angle to equatorial coordinates
+    f3fa162f 2021-05-20 Jasem Mutlaq         Fix telescope coordinates
+    d669f435 2021-05-20 Jasem Mutlaq         For now set it in the driver
+    11e4b969 2021-05-20 Jasem Mutlaq         Revert "Alignment subsystem should be on by default"
+    7d569cbb 2021-05-20 Jasem Mutlaq         Alignment subsystem should be on by default
+    3f544181 2021-05-20 Jasem Mutlaq         save parent telescope config
+    45c877c8 2021-05-20 Jasem Mutlaq         send location to alignment
+    316bea35 2021-05-19 Jasem Mutlaq         Minor fixes
+    4d61f0e9 2021-05-19 Jasem Mutlaq         Implementing INDI Alignment Subsystem
+    324d4ccb 2021-05-19 Jasem Mutlaq         Most functionalities implemented, ready for preliminary testing
+    f2525a78 2021-05-18 Jasem Mutlaq         Use encoder position when sending commands
+    910df2da 2021-05-18 Jasem Mutlaq         readscope encoder to sky coordinates
+    60b00df8 2021-05-18 Jasem Mutlaq         Fix version
+    7e2c3a1b 2021-05-18 Jasem Mutlaq         Negative double in regex
+    a11b5c17 2021-05-18 Jasem Mutlaq         Do not remove last character
+    423aa8b3 2021-05-18 Jasem Mutlaq         Use sky to encoder coordinates
+    af020428 2021-05-17 Jasem Mutlaq         More updates to driver to ready it for testing
+    f748d362 2021-05-15 Jasem Mutlaq         Initial skeleton for Astrotrac mount driver
+    f7a70d40 2021-06-07 Jasem Mutlaq         Fix critical error in libnova <---> INDI position conversion
+    5e004533 2021-06-07 Jasem Mutlaq         Immediately save to config after reading values from mount. Fixes #1484
+    17d7fbb7 2021-06-07 Jasem Mutlaq         Simplify relative GOTO
+    fea80cea 2021-06-06 Jasem Mutlaq         Enable C++14 support project wide (#1483)
+    bc8c5e04 2021-06-05 jimmy-ck             Fixing location accuracy and date&time for RST-135 (#1481)
+    69137dd7 2021-06-03 james-lan            OnStep: Be more explicit about Park status and Focusers & Detection (#1477)
+    a59f2f57 2021-06-02 Jasem Mutlaq         Possible fix for rainbow location send issue
+    1caa3cb0 2021-05-30 james-lan            OnStep: Detection for Rotator and hiding interface if not detected (Also resolves a slowdown) (#1475)
+    3b4d0fe8 2021-05-30 Eric Dejouhanet      Fix EQ500X driver and tests after refactoring. (#1476)
+    b0e07b81 2021-05-29 Jasem Mutlaq         Disable LX200 drivers test until Eric can fix the issue
+    846655a0 2021-05-29 Jim                  use only the devel package in the spec file (#1474)
+    1e930b96 2021-05-28 azwing               Manage OnStep Features Names (#1473)
+    891f8f0e 2021-05-27 james-lan            OnStep: Fix for issue mentioned on forums (#1472)
+    8f220b69 2021-05-27 Paolo Stivanin       Replace gethostbyname with getaddrinfo (#1462)
+    0572e75a 2021-05-27 Ilia Platone         Remove getFrequency() from indispectrograph.h (#1469)
+    1e81da32 2021-05-27 james-lan            OnStep: V1.10, high precision location, rotator/derotator, swap primary focuser, weather support, misc (#1465)
+    5a1bceaa 2021-05-26 Jasem Mutlaq         Check m_Location instead of reading it again from config file since parent is already doing this
+    abc5254d 2021-05-26 Jasem Mutlaq         Simplify local sidereal time. This still does not resolve eq500x test failure
+    4b6aeefd 2021-05-25 Jim                  add dependency for rtl-sdr to spec (#1467)
+    56e1b798 2021-05-25 Jasem Mutlaq         Add more parsing safety checks
+    52345fd4 2021-05-25 Jasem Mutlaq         Make RTLSDR optional after it was added as REQUIRED dependency in ls. However, make debian package builds with it.
+    3afd8393 2021-05-24 Jasem Mutlaq         Default value for slope should be zero as it must be enabled by the user explicitly
+    1e0a2210 2021-05-24 Jasem Mutlaq         Save config if there is change in ramp
+    6cf3eeae 2021-05-24 Jasem Mutlaq         Merge branch 'libastro_refactor'
+    9e7af7e9 2021-05-24 Jasem Mutlaq         Introduce temperature ramp for gradual cooling and warming of cameras equipped with a TEC cooler
+    13274d64 2021-05-24 Ilia Platone         Split spectrograph into receiver and spectrograph classes (#1463)
+    feb2e560 2021-05-24 Jasem Mutlaq         Introduce azimuth and altitude rate scales which appear to help with tracking quite a bit
+    0d9afb16 2021-05-23 Jasem Mutlaq         Fix manual stop causing unpredictable slews
+    a021832d 2021-05-23 Jasem Mutlaq         Make code more modular
+    0a2cebd4 2021-05-23 Jasem Mutlaq         Reset Tracking seconds should be used after manual motion stopped
+    7f318d35 2021-05-23 Efstathios Chrysikos Pegasus FlatMaster changes to responses. (#1464)
+    dac2e8f1 2021-05-23 Jasem Mutlaq         Fix alignment tests
+    064ead69 2021-05-23 Jasem Mutlaq         Sync with master
+    b95a894d 2021-05-23 Jasem Mutlaq         use INDI::Timer and clarify OTA Side property
+    74208afe 2021-05-23 Jasem Mutlaq         Use INDI::Timer for TimerHit
+    d5aaac1d 2021-05-22 Jasem Mutlaq         Tracking should restart after manual motion
+    8b0b0e79 2021-05-22 Jasem Mutlaq         Fix order
+    f74ff105 2021-05-22 Jasem Mutlaq         Update m_Location as well
+    15f37d21 2021-05-22 Jasem Mutlaq         Update location if already loaded from config
+    df4ec665 2021-05-22 Jasem Mutlaq         More cleanup for the Skywatcher driver
+    7488e284 2021-05-22 Jasem Mutlaq         Do not use libnova directly since it uses different conventions which might cause issues in INDI drivers if not accounted for carefully. To avoid dr..
+    ec904256 2021-05-19 interplanetarychris  Fix link to developer docs (#1461)
+    37e786e2 2021-05-18 interplanetarychris  Correct typos (#1459)
+    44ceb95c 2021-05-18 interplanetarychris  TheSky Server TCP read fixes (#1458)
+    e1b49a2e 2021-05-17 Efstathios Chrysikos Added new device Pegasus FlatMaster (#1457)
+    a1fa1df0 2021-05-17 Pawel Soja           Add Qt metatype.
+    ac21f13a 2021-05-15 Jasem Mutlaq         Nightcrawler should use FOCUS_TEMPERATURE to reports its temperature since it is standard property
+    22706194 2021-05-14 Jasem Mutlaq         Remove unused focuser temperature
+    e37dcf4f 2021-05-14 Jasem Mutlaq         Disable the old thread delete property hack
+    6e73b0fb 2021-05-14 Jasem Mutlaq         Update version for rest of iOptronv3 drivers
+    723ae455 2021-05-14 Paweł Soja           BaseDevice::getProperty as non-pointer result (#1453)
+    3a7ea5f6 2021-05-14 Pawel Soja           Fix 'quit' call in user function.
+    a142cbcc 2021-05-14 Jasem Mutlaq         Display the DeltaT response before the checksum check
+    73f61d93 2021-05-14 Jasem Mutlaq         Fix login check when comparing responses for focuser
+    85d200d1 2021-05-13 Jasem Mutlaq         iOptron DST fix. Bump iOptron version to 1.4
+    9fb32b5d 2021-05-12 Efstathios Chrysikos Pegasus SMFC Ack fix on polling. (#1455)
+    c0520324 2021-05-12 Jasem Mutlaq         Set NAXIS for RGB images
+    26df6df3 2021-05-12 Efstathios Chrysikos Pegasus DMFC fix driver to support SMFC (#1454)
+    07e51770 2021-05-10 Pawel Soja           blobModes as std::list
+    13c1fd9f 2021-05-10 Pawel Soja           cDeviceNames as std:set
+    e5850dca 2021-05-10 Pawel Soja           Simplify code, use INDI::WidgetView.
+    ab89655e 2021-05-10 Paweł Soja           INDI::BaseClient - Implement D-Pointer. (#1452)
+    9f57ed6b 2021-05-10 Pawel Soja           Format document.
+    b64c5453 2021-05-10 Pawel Soja           Add getStateAsString method.
+    f51d3b3b 2021-05-10 Pawel Soja           Set widgets parent.
+    1ae5fbe3 2021-05-10 Pawel Soja           Add operator bool, isValid method.
+    946b958c 2021-05-10 Pawel Soja           Format document.
+    55f84368 2021-05-10 Pawel Soja           Add isDeviceNameMatch method.
+    fa13f5cc 2021-05-08 Pawel Soja           Add missing include.
+    dcad945e 2021-05-08 Pawel Soja           Format document.
+    33840f1a 2021-05-08 Pawel Soja           Move implementation to source file.
+    86d32f2a 2021-05-09 Jasem Mutlaq         Fixes for FocusBoss II
+    28757cf8 2021-05-09 Jasem Mutlaq         Remove focuser udev rules install
+    6d3e310c 2021-05-09 Jasem Mutlaq         Consolidate rules into auxiliary file
+    4b1d1076 2021-05-09 Jasem Mutlaq         Make rule applicable to more FTDI chips
+    8bfdd28b 2021-05-09 Jasem Mutlaq         Simplify code
+    1a4b61c2 2021-05-08 Jasem Mutlaq         Be consistent with INDI Focuser interface
+    0df1c04c 2021-05-07 Jasem Mutlaq         Perform case-insensitive comparisions and correct iGuider reported name
+    079ab23a 2021-05-06 Jasem Mutlaq         Using the new improved INDI::Timer instead of legacy timers. For some reason the older timers stopped working, so this needs to be investigated furt..
+    a730e32c 2021-05-06 Jarno Paananen       ScopeDome driver update (#1447)
+    818d32f5 2021-05-06 Jasem Mutlaq         Looks like 100ms threshold is adequate. Still need to get rid of this arbitrary delay and implement shared_ptr while deprecating the INDI::Property ..
+    157de474 2021-05-01 Cliff                Changed E-W direction in driver as (#1441) (#1442)
+    a5f2e451 2021-04-30 Jasem Mutlaq         Style fixes. Check configConnectionMode to avoid saving config when not required
+    baab283d 2021-04-30 Jasem Mutlaq         Limit dew aggressiveness to v2
+    c5e0de78 2021-04-30 Paweł Soja           Remove all 'IS' Functions. (#1440)
+    8abfd6c2 2021-04-29 Pawel Soja           Add indi-core-deb.sh
+    192a119c 2021-04-29 Jasem Mutlaq         Temporary hack for some sitautions where a driver may define, delete, and then re-define a property in rapid succession. This might cause the INDI::..
+    b0fc9dca 2021-04-27 d6p                  fix null pointer dereference (#1437)
+    972832da 2021-04-27 Jasem Mutlaq         Separate to from Bridge controller
+    0e0681ba 2021-04-27 Jasem Mutlaq         Add more common keys to remove
+    e43904de 2021-04-27 Jasem Mutlaq         Read up to max buffer length
+    b1360971 2021-04-27 Jasem Mutlaq         Fix bug when loading up config port name and it gets truncated
+    538ab217 2021-04-26 Jasem Mutlaq         Simplify checking system port
+    e78ae47e 2021-04-25 Jasem Mutlaq         Starting INDI v1.9.1 development cycle
+    8cb8dd5c 2021-04-23 Jasem Mutlaq         Only save config when necessary. Fix MacOS error. Simplify labels
+    4247b6f4 2021-04-23 Jasem Mutlaq         Simplify the names since they can exceed the property 64 character limit
+    85925505 2021-04-23 Jasem Mutlaq         Simplify code and search for bluetooth on Linux as well
+    8d997ab2 2021-04-23 Jasem Mutlaq         Use Serail by ID on Linux
+
++ From 1.8.9 to 1.9.0
+
+    effa7cc9 2021-04-18 Paweł Soja           INDI::BaseClient - Disconnect if sending has failed. (#1430)
+    18e13b15 2021-04-18 Jasem Mutlaq         Define NOMINMAX to prevent windows.h from defining these macros that are defined in standard library
+    11cca322 2021-04-18 Jasem Mutlaq         Disable mkpath on Windows
+    bc1950de 2021-04-18 Paweł Soja           Fix - Windows doesn't have strndup. (#1429)
+    1a302cb0 2021-04-18 Paweł Soja           Fix sockets in INDI::BaseClient (#1428)
+    95a492dc 2021-04-18 Jasem Mutlaq         Force shutdown of socket on abnormal disconnect
+    fb111f51 2021-04-15 Pawel Soja           Add missing timer->start().
+    32025368 2021-04-15 Pawel Soja           Bugfix, double apos for timestamp == NULL.
+    2461a4aa 2021-04-15 Jasem Mutlaq         If filter is removed, remove presets
+    bcfb637d 2021-04-15 Jasem Mutlaq         Ignore empty snooped device
+    443824a9 2021-04-15 Jasem Mutlaq         Make it build Position Independent Code fPIC by default
+    a6ffc654 2021-04-15 Karl Rees            PMC8 V2 Firmware update (#1426)
+    b61b24c3 2021-04-13 Pavle Gartner        Deep Sky Dad Flap Panel 1 INDI driver (#1425)
+    3086c7a2 2021-04-12 Paweł Soja           Fix, use IDMessage to send info message. (#1423)
+    339ec271 2021-04-12 Jasem Mutlaq         Fix slew rate index. Fixes #1420
+    d1607a9c 2021-04-12 Jasem Mutlaq         PEC state should also include resumption of tracking. Fixes #1421
+    605180db 2021-04-10 Jasem Mutlaq         Fix major bug with INDI longitude correction that was removed in a previous commit
+    e36839a1 2021-04-06 Paweł Soja           Fix XML Escape (#1414)
+    106c546d 2021-04-06 Efstathios Chrysikos separate focuscube and scopsoag behavior to new drivers (#1415)
+    bd9110b4 2021-04-01 Pawel Soja           Add rasbian as debian/ubuntu to requisites-install.sh.
+    b2f34193 2021-04-01 Pawel Soja           Remove CircleCI badge status.
+    198d9472 2021-03-31 Pawel Soja           Add PyIndi badge status.
+    44f8c962 2021-03-31 Pawel Soja           Add swig package.
+    51902470 2021-03-31 Paweł Soja           Feature GitHub actions - PyIndi (#1411)
+    aaf60de4 2021-03-31 Paweł Soja           Merge pull request #1410
+    e4b2886a 2021-03-31 Pawel Soja           Add PropertyBasic<T>::at(size_t index).
+    32654a8b 2021-03-31 Pawel Soja           Add rule support.
+    21983dd0 2021-03-31 Pawel Soja           Fix, updateMinMax only driver side.
+    58babc59 2021-03-31 Pawel Soja           Remove unused 'isNull' functions.
+    be0736af 2021-03-31 Pawel Soja           Fix, avoid calling pure virtual method.
+    09471760 2021-03-31 Pawel Soja           Fix struct in C++.
+    a1de8659 2021-03-31 Pawel Soja           Remove duplicate MAXRBUF.
+    90233c0e 2021-03-30 Pawel Soja           Use sh commands.
+    7aea1e12 2021-03-30 Paweł Soja           Merge pull request #1409 from indilib/feature-github-actions-nproc
+    f5047a9e 2021-03-30 Pawel Soja           Add workflow_dispatch, types completed.
+    c716dda6 2021-03-30 Pawel Soja           Add missing install argument.
+    b2436466 2021-03-30 Pawel Soja           Add workflow.
+    53921e8e 2021-03-30 Pawel Soja           Fix sudo syntax.
+    5eba5761 2021-03-30 Pawel Soja           Autodetect jobs for 'make'.
+    2b1bb261 2021-03-29 Jim                  Usb memory fix (#1407)
+    37402562 2021-03-30 Jasem Mutlaq         Suggested fix by Robert Brown. Fixes #1406
+    b1e1413a 2021-03-30 Pawel Soja           Update workflows status, add MacOS.
+    9b975a95 2021-03-30 Pawel Soja           Always run workflow for Linux.
+    a34c468a 2021-03-30 Pawel Soja           Rename Indi to Linux workflow.
+    3946dfbb 2021-03-30 Paweł Soja           Merge pull request #1405 from indilib/feature-github-macos
+    bc360d18 2021-03-30 Pawel Soja           Add GitHub Actions for MacOS.
+    c125d89c 2021-03-30 Paweł Soja           Merge pull request #1404 from indilib/fix-warnings-macos
+    b21d8bf3 2021-03-29 Pawel Soja           Fix conversion from nullptr to std::string.
+    856faeff 2021-03-29 Pawel Soja           Fix sign-compare.
+    4a8c029f 2021-03-29 Pawel Soja           Remove unused variable.
+    856a8325 2021-03-29 Pawel Soja           Fix warnings, reimplement.
+    32fecf7d 2021-03-29 Pawel Soja           bsdtar support
+    a2ebd7db 2021-03-29 Pawel Soja           Use the official image repository.
+    e9af9ddc 2021-03-29 Paweł Soja           Fix macOS/clang build warnings. (#1402)
+    c148c55f 2021-03-28 Pawel Soja           Add GitHub Actions status.
+    7be74543 2021-03-28 Markus Noga          Fixed TeenAstro mount/focuser race condition during automated port scanning (#1401)
+    8d5025ab 2021-03-28 Pawel Soja           GoogleTest, shared libs.
+    f6bcc855 2021-03-28 Pawel Soja           GoogleTest, shared libs.
+    109d986b 2021-03-28 Pawel Soja           Add pre-requisites (indi 3rd-party).
+    fcf22aa8 2021-03-28 Pawel Soja           Add default github actions workflow.
+    64dde3c9 2021-03-28 Pawel Soja           Add Dockerfile + workflow.
+    8d9f21cc 2021-03-28 Pawel Soja           Add general purpose build/install scripts.
+    c744e452 2021-03-28 Jasem Mutlaq         Add virtualcom to ignore exclusive lock
+    3efe37f0 2021-03-28 Ilia Platone         Add functions to indicom (#1400)
+    68a9c5bd 2021-03-26 Jasem Mutlaq         Opps forgot to fill in the property
+    48a14ea6 2021-03-26 Jasem Mutlaq         Add missing FocuserDrive property
+    414565f1 2021-03-26 Jasem Mutlaq         Simplify focuser
+    8768ce79 2021-03-26 Jasem Mutlaq         Set focuser capabilities
+    faf333fb 2021-03-25 Jasem Mutlaq         Add External Motor Control support to PPBA
+    dc3ed6a3 2021-03-25 Jasem Mutlaq         Init string buffers to zero
+    0ecb1f1f 2021-03-25 Efstathios Chrysikos Added PegasusAstro new devices (#1398)
+    a9d3182e 2021-03-25 Jasem Mutlaq         Fix warning
+    8273084f 2021-03-24 rlancasteAstro       Need to fix build error on OS X (#1396)
+    b6d40949 2021-03-22 Markus Noga          Added support for TeenAstro focuser (#1392)
+    5c1b4fb7 2021-03-22 Jasem Mutlaq         Add general rule for all cameras as proposed by @openastroproject
+    de478d75 2021-03-22 Paweł Soja           Bugfix - INDI::SingleThreadPool - self quit/start deadlock. (#1394)
+    d3897d7e 2021-03-21 camielseverijns      Update lx200pulsar2.cpp (#1393)
+    8734b723 2021-03-20 Paweł Soja           StreamManager - thread pool for uploadStream (#1391)
+    492019bc 2021-03-19 Paweł Soja           Add STL-style iterators to INDI::PropertyBasic (#1389)
+    f6d8ecd9 2021-03-18 Paweł Soja           Implement real periodic timer. (#1387)
+    6550c8b0 2021-03-18 fcasarramona         Improving Dome slave to telescope regarding telescope pier side (#1373)
+    175f38cd 2021-03-16 Paweł Soja           EventLoop - List implementation for timers (#1385)
+    34c99fa9 2021-03-16 Paweł Soja           Implementation of high-level timers (#1386)
+    db9772d4 2021-03-15 Paweł Soja           StreamManager - Bugfix - D-Pointer implementation (#1383)
+    743006fe 2021-03-13 Paweł Soja           Bugfix - Use const qualifier for const string (#1380)
+    217a2d4c 2021-03-13 Paweł Soja           Cleaning up the examples - Remove global 'IS' functions. (#1381)
+    5d040ddc 2021-03-13 Jasem Mutlaq         Add Pegasus OAG alias
+    a2d939bf 2021-03-12 Jasem Mutlaq         Set 115000 as default rate for everything other than iOptron 120
+    3fdd324e 2021-03-12 Paweł Soja           Bugfix - test_ccd_simulator with incorrect library, missing override (#1379)
+    01cc8da1 2021-03-12 TallFurryMan         Updated flux calculation for CCD Simulator (#1356)
+    d9a5e309 2021-03-11 Paweł Soja           Add global ISGetProperties/ISNewXXX/ISSnoopDevice propagation functions for drivers (#1375)
+    e681724b 2021-03-11 Jasem Mutlaq         Update Celestron version to 3.6 post the guide fixes
+    9cb023ee 2021-03-11 Paweł Soja           INDI::PropertyXXX - push widgets, get size - implementation (#1374)
+    f12c8952 2021-03-11 Paweł Soja           add missing override specifier (#1377)
+    7e934e47 2021-03-10 interplanetarychris  Fix typo in CCD simulator GUI (#1378)
+    7ce91b24 2021-03-10 nrackwit             CelestronGPS reporting wrong rates to telescope during pulse guiding #1368 (#1369)
+    856dfc78 2021-03-10 Jasem Mutlaq         Fix style to astyle
+    23bfc208 2021-03-10 Paweł Soja           Code quality improvement - Preparation for future refactoring. (#1372)
+    3913ba39 2021-03-10 Jasem Mutlaq         Revert "Delete gps_simulator.cpp"
+    ec9811a3 2021-03-10 Jasem Mutlaq         Merge pull request #1371 from seventi71/master
+    5471b264 2021-03-10 Jasem Mutlaq         Delete gps_simulator.cpp
+    de5b1cfc 2021-03-08 seventi71            Merge branch 'master' of https://github.com/seventi71/indi
+    f85735c7 2021-03-08 Christopher          Merge pull request #2 from indilib/master
+    774f8854 2021-03-06 Paweł Soja           Refactoring - Typed property (#1366)
+    71b49c82 2021-03-06 Paweł Soja           Fix warnings, use strcpy/strcat for string literal (#1367)
+    b3048a5b 2021-03-04 Jasem Mutlaq         Starting INDI 1.9.0 develpment cycle
+    95aa471e 2021-03-04 seventi71            GPS Update
+    155ca727 2021-03-02 Paweł Soja           PropertyView - client/server side + refactor (#1361)
+    4c3f1c60 2021-02-28 Paweł Soja           PropertyView - implementation of subsequent methods (#1360)
+
++ From 1.8.8 to 1.8.9
+
+    + 91bcd531 2021-02-24 Jasem Mutlaq         Add missing exec                                                                                                                                      
+    + ab630cbd 2021-02-16 Jasem Mutlaq         Add more helpful messages for home position                                                                                                           
+    + 26983606 2021-02-16 Jasem Mutlaq         Fix paramount home and sidereal rate                                                                                                                  
+    + 13420224 2021-02-14 rishi-garrod         Added labels for USB and Dew (#1355)                                                                                                                  
+    + 71b4dbf6 2021-02-13 Jasem Mutlaq         Add entry for star adventurer                                                                                                                         
+    + 3acd0f1c 2021-02-13 Jasem Mutlaq         Add motor rate and current to the config save                                                                                                         
+    + 162bd940 2021-02-13 Jasem Mutlaq         Add CEM26 and GEM28. Migrate CEM40 and GEM45 drivers to iOptronv3 commands and remove parking restrictions. Fixes #1354                               
+    + 186e45f7 2021-02-13 interplanetarychris  Final fixes for Celestrongps guider scale (#1353)                                                                                                     
+    + ace5d9ef 2021-02-09 Jarno Paananen       DDW state change fix part 2 (#1351)                                                                                                                   
+    + 0b670b1b 2021-02-07 Jasem Mutlaq         Add preliminary support to inquire pier side for Paramount. Not tested yet                                                                            
+    + ef4e73f8 2021-02-06 Jarno Paananen       DDW shutter state fix (#1349)                                                                                                                         
+    + 351095ac 2021-02-06 Paweł Soja           Separate useful macros to indimacros.h (#1348)                                                                                                        
+    + 4974cf20 2021-02-06 Jasem Mutlaq         Add support to Pegasus Micro as well                                                                                                                  
+    + 205f72f8 2021-02-05 Jarno Paananen       Fixes to handling of state changes in DDW driver (#1346)                                                                                              
+    + aae54d9c 2021-02-05 Paweł Soja           Fix - PyIndi fails over missing symbol (#1347)                                                                                                        
+    + 0fe8fe1c 2021-02-04 Jarno Paananen       Updates to DDW driver (#1344)                                                                                                                         
+    + 81e0b01e 2021-02-02 Jarno Paananen       Avoid DDW communication watchdog (#1342)                                                                                                              
+    + bb72af43 2021-02-01 Jarno Paananen       Driver for Digital Dome Works (DDW) from Technical Innovations (#1341)                                                                                
+    + 47ed55fc 2021-02-01 Jasem Mutlaq         Increment version for SkyWAtcher Alt-Az                                                                                                               
+    + 3c222a50 2021-02-01 Jasem Mutlaq         Add support for AZEQ6 as proposed by Dirk on INDI forums                                                                                              
+    + fc26c012 2021-02-01 rishi-garrod         Fixed Auto Dew for V2 and added Aggessiveness for V2. Fixed a few lit… (#1340)                                                                        
+    + 077d2a4e 2021-01-30 Rick Bassham         fix: add null pointer check to serial connect (#1335)                                                                                                 
+    + 45ae8e4c 2021-01-23 Jasem Mutlaq         Add saveConfigItems to WeatherInterface and utilize that in classes that inherit it                                                                   
+    + d523ba6b 2021-01-23 Jasem Mutlaq         Simplify code and use better variable names                                                                                                           
+    + 09420ebb 2021-01-21 d33psky              Integra85 driver sanity checks and improved user messages. (#1334)                                                                                    
+    + fa59b727 2021-01-21 interplanetarychris  Fix celestrongps guide rate scaling (#1331)                                                                                                           
+    + d6e9d74a 2021-01-19 Paweł Soja           DefaultDevice - D-Pointer implementation (#1327)                                                                                                      
+    + f01ad1fc 2021-01-19 Lesage Franck        Tracking can now be switched on/off (#1326)                                                                                                           
+    + 3e75b36c 2021-01-19 Paweł Soja           Refactoring - Widget decorators (#1324)                                                                                                               
+    + 022406e2 2021-01-19 Ilia Platone         indicom.c update for delay calculation (#1328)                                                                                                        
+    + 09a1e461 2021-01-18 pmneo                Frame Based V4L Stacking and lazy stop capture for better loop perf (#1325)                                                                           
+    + 5b13bbf7 2021-01-15 Rick Bassham         Add snoop device to joystick controller (#1323)                                                                                                       
+    + ec3836bd 2021-01-15 avarakin             Fix for issue with manipulating output ports (#1322)                                                                                                  
+    + 77128112 2021-01-13 Jasem Mutlaq         Temporary measure to prevent deadlock with some clients. Still requires long term solution                                                            
+    + 4baca66f 2021-01-13 Paweł Soja           Refactoring - less dependencies between files / less mallocs (#1318)                                                                                  
+    + ab26ac5e 2021-01-12 Paweł Soja           Refactoring/INDI::BaseDevice - D-Pointer implemented (#1320)                                                                                          
+    + de9b0461 2021-01-12 lantictac            Sesto Senso 2: Workaround apply motor preset issue (#1319)                                                                                            
+    + 428e0fe9 2021-01-12 Jasem Mutlaq         Starting libindi v1.8.9 development cycle                                                                                                             
+    + 74615e6c 2021-01-11 Jasem Mutlaq         Protect properties and messages when used in multiple threads. While this used to work fine, some conditions may led to corrupted data                
+    + c714f9c5 2021-01-11 pawel-soja           Indidriver/refactoring (#1313)                                                                                                                        
+    + 978290d5 2021-01-11 lantictac            Sesto Senso 2: Motor settings (#1315)
+      
+From 1.8.7 to 1.8.8
+
+      + New HOBYM Crux telescope driver (#1295)
+      + New Rainbow focuser driver (#1304)
+      + New ActiveFocuser driver release (#1301)
+      + 10Micron: UnattendedFlip handling, implements #1276 (#1298)
+      + Bugfix/sat track lx200 julian day (#1305)
+      + Improved serial port auto-search.
+      + Refactor/satellite tracking properties -> Moving properties to a higher abstraction layer (#1300)
+      + SkyWatcher Alt-Az driver improvements.
+      + Indibase/refactoring - update INDI::Property (#1302)
+      + Update of SmartFocus driver (#1275)
+      + Add new helper methods to the AlignmentSubsystemForDrivers (Alt/Az) (#1308)
+      + Streammanager/chrono - Fix the 24h time limit. (#1278)
+      + Fix remote driver not sending properties to upstream server
+      + Delay calculation in indicommon and indicorrelator (#1277)
+      + Indidriver/refactoring - fix memory leak, increase performance (#1281)
+      + Streammanager/refactoring (#1280)
+      + Move absolute position bugfix (#1285)
+      + Use of the common mkpath function (#1288)
+      + Sesto Senso 2: Support for displaying 12V input voltage. (#1289)
+      + Add Microsoft LifeCam Cinema to pixelSizeInfo (#1314)
+      + Sesto Senso 2: Log & display firmware version (#1292)
+      + fix: inline methods that use unlinked functions (#1312)
+
+From 1.8.6 to 1.8.7
+
+      + New Esatto focuser support.
+      + New Pegasus Falcon Rotator.
+      + Fix QHYCFW3 driver handshake (#1229)
+      + Support for AZ-GTi in Alt-Az mode.
+      + Improve on deadlocks and integrity (#1243)
+      + Rework/streammanager - fix recording subframe issue, add processing qeue, configurable limits memory/fps (#1254)
+      + Baader SteelDrive II - feature, Adjustable holding and move current for stepper drive (#1257)
+      + Do not block the stream thread when sending FPS status, fix frames discarding. (#1258)
+      + Many bug fixes and additions supporting advanced Pulsar2 features (#1261)
+      + Add support to connecting to all remote drivers without specifying an explicit driver.
+      + Added Humidity, Pressure and Clouds to the WeatherWatcher driver (#1247)
+      + Fixed Losmandy Gemini failed to complete park issue (#1239).
+      + Set Eq Coords property state to OK & IDLE as needed (#1240).
+      + 1st fix for CEM25p Slewing to home position while parked (#1245)
+      + DSP Improvements (#1251)
+      + Compatibility fixed for SteelDriver II. New firmware has more arguments. (#1253)
+      + Full support for Fedora builds.
+
+From 1.8.5 to 1.8.6
+
+      + New Raspberry Pi HQ Camera driver.
+      + New Pegasus PPBA driver.
+      + New DomePro2 driver.
+      + Add PierSide to indi_ioptron_telescope (#1120)
+      + Fix Pier Side problem on Gemini mounts (#1122)
+      + Goto mode selectable for Alt/Az mounts via an UI Switch. (#1136)
+      + OnStep: Weather sensor (READ) support (#1142)
+      + OnStep: Support for setting temperatures for dew heaters/focusers
+      + Fix skywatcher altaz crash (#1151)
+      + Add the focus temperature property to the focus simulator (#1152)
+      + Logitech HD C270 webcam data added to v4l2_ccd driver (#1154)
+      + Astrophysics park3 support (#1167)
+      + Implement Parking for LX200 classic (#1164)
+      + UDP support for skywatcherAPI (#1172)
+      + LX200 FS-2 Park (#1165)
+      + Telescope Simulator Parking to HA/Dec frame (#1174)
+      + Update Pointing State determination. (#1179)
+      + Feature Satellite tracking with TLE for 10Micron mounts (#1208)
+      + Add focuser temperature to FITS header (#1209)
+      + myFocuserPro2 Fix coil power command (#1195)
+      + Updated TeenAstro INDI driver for firmware 1.2.0 (#1196)
+
+From 1.8.4 to 1.8.5
+
+      + New PlaneWave EFA Driver.
+      + New PlaneWave Delta-T driver.
+      + New SestoSenso2 driver.
+      + New Radio Astronomy Interferometer Driver.
+      + Fixed parking in Temma driver.
+      + Improved Slew accuray for Celestron mounts.
+      + Improved TeenAstro Mount driver.
+      + Fixed declination issue in Rainbow driver.
+      + Fixed Guide problem with StarSense.
+      + Fixed AAG driver and Weather Parameters state.
+      + Fixed OnStep Speed change
+      + Added Park3 to AP mount driver.
+      + Improved XAGYL driver.
+      + Added hour axis offset to CCD Simulator.
+      + Added FOCUSPOS to the FITS header.
+      + Updated Telescope Simulator Driver.
+
+From 1.8.3 to 1.8.4
+
+      + New TeenAstro Mount driver.
+      + New DSP plugin for Signal Processing.
+      + New INDI interface for correlators.
+      + Draft for Pulse Detectors (revealers, dosimeters, cosmic ray).
+      + Created SensorInterface and Spectrograph, Detector subclasses.
+      + Celestron PEC control is added that provides seek index, stop, playback and record commands.
+      + Celestron negative UTC fix.
+      + Fixed iOptron mount firmware parsing.
+      + Fixed version read in MoonLite focuser.
+      + DeepSkyDad3 backlash compensation.
+      + CCD Simulator bayer support.
+      + FCUSB2 support.
+      + Fixed complation on FreeBSD.
+
+From 1.8.2 to 1.8.3
+
+      + New RainbowAstro Mount driver.
+      + New Simulated Pier Side option for all mounts.
+      + Added iOptron GEM45 support. (#1041)
+      + Added *preliminary* support for iOptron iPolar. (#1043)
+      + Update Celestron GPS Guide (#1048)
+      + Bug fix: meridian flip working for longer polling intervals (#1042)
+      + Update Celestron GPS Guide (#1048)
+      + Added recording the absolute position of the focuser to the FITS header (#1052)
+      + Fix enabling/disabling DMFC properties and remove dead code (#1050)
+      + Enable saving/loading backlash steps and fix motor type select (#1055)
+
+
+From 1.8.1 to 1.8.2
+
+      + First release of INDI separate from INDI 3rd party repository.
+      + New Pular Domes driver.
+      + New MyFocuserPro2 driver.
+      + New SteelDriverII focuser driver.
+      + New Deep Sky Dad AF3 driver.
+      + Fixed INDI Client build on Windows.
+      + Fixed weather override functionality in INDI::Weather.
+      + Fixed INDI Dome tracking.
+      + Updated PCM8 driver to automatically detect mount types.
+      + Serial communication polling period is configurable 1-30 secs.
+      + Added ISGetConfigSwitch to read switch information directly from config.
+
+From 1.8.0 to 1.8.1
+
+      + Unified Toupbase driver for Touptek-based cameras.
+      + Support for native backlash handling in INDI::FocuserInterface
+      + Apogee fan control support.
+      + Fixed Bluetooth serial port connectivity.
+      + Updated version of OnStep driver (v1.8), fixes for Fork Mounts.
+      + Pegasus Ultimate Power Box v2 support.
+      + Fixed Celestron GPS focuser position.
+      + Fixed parking mode initialization for roll-off roofs.
+      + Fixed various FocusLynx issues and added Optec Sagitta focuser.
+      + LX200 Based mount migrated to INDI::FocuserInterface
+      + QHY SDK updated to 6.0.1.
+
+From 1.7.9 to 1.8.0
+
+      + iOptron CEM40 driver.
+      + QHYCCD CFW1 driver.
+      + Decode ATIK firmware version correctly.
+      + Apply gamma when downscaling 16bit to 8bit stream.
+      + Improve reliability of sendBlob.
+      + GPSD driver should use raw GPS time by default.
+      + add watchProperty to make client only request and only process properties of interest.
+      + Prevents indi_fli_wheel crash for FLI-CFW-1-8 model.
+      + Fix communication issues in Vixen Starbook driver.
+      + Fix Dew control and Current sensing on PPB.
+      + Fix out-of-bounds access in 420p conversion in V4L2 driver.
+      + Fix Atik guide ST4 pulses.
+      + ASI Camera SDK 1.14.0715 update.
+      + QHY SDK updated to 5.1.0.
+
+From 1.7.8 to 1.7.9
+
+      + New Astromechanic Light Pollution Meter driver.
+      + New FCUSB driver.
+      + SestoSenso driver motion issues resolved.
+      + LX200 drivers can operate over TCP.
+      + Fix TCFS issue when temperature sensor is not connected.
+      + Experimental support for KMTronic USB Relay Serial for Nikon cameras.
+      + Fix RA drift with HEQ5 firmware 106.
+      + Added dead-zones to joystick driver.
+      + Update ASI EAF SDK to version 0.1.0524.
+      + QHY SDK updated to 5.0.9.
+
+From 1.7.7 to 1.7.8
+
+      + New Omegon EQ500X mount driver.
+      + New TALON6 dome driver.
+      + New Astromechanics focuser driver.
+      + New DeepSkyDad AF2 focuser driver.
+      + New Apogee CFW filter wheel driver.
+      + Support for Radio Detector Streaming.
+      + ScopeDome fixes and improvements.
+      + Fixed Vixen Starbook version detection bug.
+      + Fixed Avalon Stargo Connect/Disconnect issue.
+      + Improved detection of Quantum wheel.
+      + Update Celestron SCT focuser to prevent moves when not calibrated.
+      + Improve Sync, Park, Focus Max in DreamFocuser driver.
+      + Implemented UI for PWM Outputs for OnStep
+      + Fixed subframe capture in QHY driver.
+      + ASI SDK updated to v1.14.0425.
+      + QHY SDK updated to 5.0.5.
+
+From 1.7.6 to 1.7.7
+
+      + New DreamFocuser driver.
+      + New BeeFocus driver.
+      + New Weather Safety Proxy driver.
+      + Nexdome driver rewritten to INDI standards.
+      + DSP & Radio Detector improvements.
+      + Vixen Starbook driver received numerous updates and fixes.
+      + Celestron driver supports focuser control directly.
+      + Celestron driver resumes from last alignment. Fixed hibernation.
+      + Fixed QHY filter wheel issues & live streaming.
+      + Fixed QHY temperature controls in manual and auto modes.
+      + ATIK SDK updated & fixed filter wheel issues.
+      + Fix bulb exposures initiated with shutter release cable on Pentax cameras.
+      + QHY and SDR drivers enabled back on MacOS.
+      + Weather drivers offer a weather override toggle.
+      + All iOptron drivers now park to Alt/Az coordinates.
+      + Dome and Telescope scripts use safer methods to create temporary files.
+      + Enhanced performance and reliability of SestoSenso driver.
+      + Enhanced and extended telescope joystick controls.
+      + ASI SDK updated to v1.14.0227. Fixed asynchronous image loading.
+      + QHY SDK updated to 5.0.3.
+
+From 1.7.5 to 1.7.6
+
+      + New SBIG Adaptive Optics driver.
+      + New Pegasus Ultimate Power Box & Pocket Box drivers.
+      + New official Atik driver.
+      + New Vixen Starbook driver.
+      + New Avalon StarGo mount driver.
+      + New ScopeDome driver.
+      + New Lacerta MFOC focuser driver.
+      + New DeepSkyDad AF1 driver.
+      + New Talon6 RoR driver.
+      + New Celestron SCT focuser driver (standalone).
+      + New release for OnStep driver with numerous updates and fixes.
+      + Synscan driver is written from scratch again with support for pulse guiding.
+      + nFocus and nStep drivers are written from scratch to support all features.
+      + Significant performance improvements in all camera drivers.
+      + Support for compressed FITS files via fpack lossless compression.
+      + DSP Library added to INDI driver.
+      + INDUINO driver fixes and updates.
+      + Update QHY driver and QHY SDK to v4.0.12
+      + Numerous updates to INDI::Detector and Radio Astronomy drivers.
+      + DSPAU updated to v2.0.7
+      + Fixed SestoSenso absolute position saved value.
+      + Fixed bug in Astrophysics driver for pulse guide > 999ms.
+      + Fixed & improved Touptek drivers.
+      + Fixed & improved Altair drivers.
+      + V4L2 drivers reports Pixel Size plus Autodetect/Collection Link.
+      + Correct order of Bayer pattern in DSLR RAW.
+      + Fixed USBFocusV3 connection issues.
+      + Improve indiserver message queue memory management.
+      + SSAG driver abort fix.
+      + Fix bulb exposures initiated with shutter release cable on Pentax cameras.
+      + Fix negative declination issue in synscan.
+      + Added fix for QHY5-M- CancelQHYCCDExposing* crash
+      + Fixed Temma guiding with PHD2.
+      + Fixed TCFS position and temperature.
+      + Fixed race condition when using multiple devices that can park.
+      + Fixes to INDI::Weather interface.
+      + Initialize backlash on eqmod connect.
+      + Focuser Interface should now natively support Focus Max Limit, Sync, and Reverse Direction.
+      + Preliminary support for Websockets in INDI::CCD. It is off by default.
+      + MacOS build fixes.
+
+From 1.7.4 to 1.7.5
+
+      + New Altair Cameras driver.
+      + New Touptek Cameras.
+      + New standalone QHY CFW driver.
+      + New manual filter wheel driver.
+      + New OpenWeatherMap driver.
+      + New OnFocus driver.
+      + Support for AZ-GTi driver via EQMod.
+      + Support for Gemini SnapCap driver.
+      + Support for FocusCube.
+      + limesdr (Software Defined Radio) driver fixes & improvements.
+      + MGEN driver updates and fixes.
+      + RTL-SDR driver updates and fixes.
+      + arduino driver updates and fixes.
+      + Duplicate models handling in multiple drivers.
+      + Add fallback shutters speed for some GPhoto cameras.
+      + Add pier side support to Celestron and Synscan drivers.
+      + Add focus limits to SestoSenso driver.
+      + Major update to USBFocusV3 driver.
+      + Added stream struct and some astronomic helpers to libdspau.
+      + OnStep fixes and updates.
+      + FocusLynx refactor and updates.
+      + Geographic location update fixes in mount driver.
+      + Parking support in SS2000PC mount.
+      + TCFS refactoring and fixes.
+      + WeatherWatcher socket bug fixes.
+      + Fix Synscan J2000 epoch issue.
+      + Fix DSUSB GPhoto bug when capturing short exposures.
+      + Add option to force BULB by default in GPhoto driver.
+      + Add XPIXSX and YPIXSX for logical binned pixel size.
+      + Fix problem with handling XML entities between clients, servers, and drivers.
+      + Fix feature stacking streamed frames to simulate absolute exposure.
+      + Fix iOptron guide rates.
+      + Fix iOptron calender setting.
+      + Removed libapogee libboost dependency.
+      + Removed Zulu prefix in FITS header timestamp.
+      + Updated Morovian SDK (0.3.5)
+      + Updated QHY SDK (4.0.1)
+      + Updated ZWO SDK (1.13.0930)
+
+From 1.7.2 to 1.7.4
+
+      + New Celestron Nightscape 8300 CCD driver.
+      + New INDI FFMPEG-based Webcam driver.
+      + New ZWO USB2ST4 driver.
+      + New Arduino ST4 driver.
+      + New Weather Watcher driver.
+      + Optec IFW to support TCP/IP.
+      + Added color support for OGV recorder.
+      + Pulse Command now turned on by default.
+      + Support for Park Positions 1/2/3/4 in Astrophsyics driver. Fixed pulse guiding.
+      + Add DSLR temperature reporting.
+      + Add support for GRBG pixel layout (8-bit) used by things such as NexImage 5.
+      + Improved Pulse Guiding in EQMod.
+      + Fixed EQMod DEC Inversion which caused issues with PHD2.
+      + Fixex checksum error in maxdomeii. Implement dome motion buttons.
+      + Fixed tracking issue in EQMod when using a joystick.
+      + Fixex pier side reporting for 10Micron mounts.
+      + Fixed protocol issue with ethernet connection to AP GTOCP4.
+      + Fixed Celestron Pulse guiding.
+      + Fixed occasional filter loading issues.
+      + Add additional FITS Keyword SITELAT and SITELONG.
+      + Add custom max filter count to trutech.
+      + Add Zulu postfix to UTC time in FITS header.
+      + Increase usbfs_memory to 256 for all USB cameras as it helps under ARM architecture.
+      + SBIG, SSAG, Moravian, Radio, Fishcamp & FLI driver support under MacOS.
+      + Updated QHY SDK to 2.0.10.
+
+
+From 1.7.0 to 1.7.2
+
+      + Fixed live view, mirror locking, and ghost images in GPhoto driver.
+      + Warn user when configuration files are owned by root.
+      + Fix setting of GPS Interface in GPS dervied classes.
+      + Added camera download speed options to FLI driver.
+      + Added NIR preflash for Moravian CCD if hardware supports it.
+      + Several Pyrix rotator fixes.
+      + Fix incorrect use of sizeof.
+
+From 1.6.3 to 1.7.0
+
+      + Updated QHY SDK.
+      + FLI drivers are now based on libusb rather than legacy kernel driver.
+      + New driver for CEM120 mount.
+      + Several memory leaks were fixed.
+      + Added support for background flushing for FLI CCDs.
+      + Added preliminary support for CCD rapid captures on the millisecond range.
+      + SX CCD driver updated to support ￼ICX453 & M25C.
+      + SX AO driver updated to emply INDI serial connection plugin.
+      + Fix timing issue with GPhoto making it stuck in busy state after initial capture.
+      + ASI driver enhancements. Video format recall fix.
+      + MaxDomeII driver refactored and updated.
+      + Several fixes for Gemini Integra driver.
+      + Polling period for most drivers is now customizable.
+      + GPhoto driver supported Abort exposure. Subframing fixes.
+      + GPS driver can set system time from GPS source.
+      + Astrophyics Experimental Driver with multi-parking support.
+      + Numerous OnStep driver fixes and updates.
+      + SkySensor2000 Pulse guiding support.
+      + Prevent sandbox ACCESS_VIOLATION on Gentoo
+      + Celestron driver refactoring and support for high-precision formats.
+      + Fixed script execution in scripting gateways
+      + Fix flags for Cygwin.
+      + Fix non-standard POSIX C functions.
+      + Replace deprecated usleep with nanosleep.
+      + CCD & Telescope simulator updated so that can be used effectively in any combination with physical devices.
+
+From 1.6.0 to 1.6.2
+
+      + INDI API version was not updated to 1.6.X+
+      + cmake_modules directory was missing from release.
+      + Fixed crash with joystick driver with joysticks with odd axis.
+
+From 1.5.0 to 1.6.0
+
+      + INDI Base Client is now supported on Windows, MacOS, and Linux.
+      + Added 10Micron Mount support.
+      + Added spectrum support and libDSPAU.
+      + Added NexDome support.
+      + Added Pyxis Rotator support.
+      + Added Pegasus Focuser support.
+      + Added MBox Weather box support.
+      + Added SnapCap dust cap and flat panel support.
+      + Added Sesto-Senso focuser support.
+      + Added USB_DewPoint support.
+      + Added GPS-NMEA sources support.
+      + Added Gemini Telescope Design Integra85 Focusing Rotator WIP support.
+      + Added Lunatico's Armadillo and Platypus support.
+      + Video Streaming support for MacOS.
+      + Video Recording with libtheora (Optional).
+      + Video Streaming with MJPEG encoder.
+      + IOptron fixes and improvements.
+      + More NextstarEvo improvements.
+      + Dedicated Guider Simulator.
+      + QHY & ASI updated to latest SDK.
+      + Apogee fixes for MacOS.
+      + INova fixes and improvements. Updated SDK.
+      + QHY, Apogee, DSI builds for MacOS.
+      + EQMod Horizon fixes.
+      + Skywatcher Alt-Az Mount & Syncscan fixes and improvements including guide support.
+      + StarSense support in Celestron Driver.
+      + Improvements to mount parking & unparking.
+      + New experimental Astrophysics Driver.
+      + Support for Losmandy UDP protocol.
+      + Fixed Dome slaving slew and tracking.
+      + Added Radio Antenna Simulator.
+      + New INDI Rotator Interface.
+      + UDEV rule to disable automount of DSLR cameras.
+      + Sky Quality Meter simulator.
+      + Improvements to INDI GPS drivers.
+      + TCFS Fixes.
+      + SkySensorPC2000 fixes.
+      + Fixed WatchDog behavior in case of unavailable dome.
+      + Improved Continious Integration support with Travis & CircleCI using Docker.
+
+From 1.4.0 to 1.5.0
+
+      + New Detector Interface for photon and radio detectors.
+      + New Software-Defined-Radio driver (RTLSDR).
+      + New Connections plugin system to facilitate driver development.
+      + New standarized tracking properties system for all mounts.
+      + New Digital Settings Circiles (DSC) driver.
+      + New Lacerta MGen driver.
+      + New NightCrawler Focusing Rotator driver.
+      + New Optec Gemini Focusing Rotater driver.
+      + New iNovaPLX CCD driver.
+      + QHY SDK update to 1.10.0. Support for QHY PoleMaster.
+      + QSI SDK update to 7.6.0
+      + Support for INDI client under Windows.
+      + Support for Pier Side in many mount drivers.
+      + Support for SkySafari.
+      + Fix FLIUSB for 4.6 and 4.9 kernels.
+      + Fixed wrong time format in generated SER files.
+      + ZWO ASI drivers for MacOS.
+      + Various GPSD fixes.
+      + Proper handing of ISO8601 timestamps in the generated filenames.
+      + Improved Gemini mount driver with more functionality and bug fixes.
+      + Many V4L2 fixes and improvements. Support for V4L2 integer menus.
+      + Ability to define multiple primary/guide scope configurations.
+      + ZEQ25 Improvements and fixes.
+      + NStep driver improvements and fixes.
+      + Added Ccache support.
+      + Support for Gotonova driver.
+      + Added Unity Build support.
+      + Improved Astrophysics driver.
+      + Added USB connectivity to SQM device driver.
+      + More robust handling of reading pier side from mount.
+      + Warn client that no devices are detected in case of Multiple-Devices-Per-Driver drivers.
+      + Added PEC control to INDI::Telescope. Each driver must handle the low level protocol to actually enable or disable PEC.
+      + Added security (hardening) flags.
+      + SoftPEC implementation for Virtuoso mounts in skywatcherAPIMount.
+      + Added TELESCOP, OBSERVER, and OBJECT keywords to the FITS header.
+
+From 1.3.1 to 1.4.0
+
+      + Support for HitecAstro DC Focuser.
+      + Support for SQL-LE Sky Quality Meter unit.
+      + Support for USB Focus V3.
+      + Support for Quantum Filter Wheel.
+      + Support for 10micron mounts.
+      + ZWO ASI filter wheel support. Driver updated to latest SDK. Fix infinite loop exposure.
+      + QHY driver updated to latest SDK.
+      + Added preliminary support to TCP server connection for all mounts.
+      + Updated and improved Nexstar Evo driver.
+      + Fixed reset of filter wheel names to default values under some circumstances.
+      + Fixed feedback loop issue in chained INDI server.
+      + Handle correctly broken frames in FLI driver; convert time left from ms to seconds as it should be.
+      + V4L2 CCD driver updated to properly work with DMK cameras.
+      + Several bugfixes for Moravian CCD driver.
+      + CCD Simulator allows for up to 4096x4096 resolution.
+      + Raw color video streaming now uses RGB24 instead of RGBA to conserve bandwidth.
+      + New Dome and Mount safety interlocks mechanism.
+      + Fix the Virtuoso mount detection in SkyWatcherMountAPI driver.
+      + Support relative driver paths to INDI server.
+      + Fix property cache collision conflict in case of multiple devices per driver.
+      + Moonlite driver can now sync to any value instead of reset to zero.
+      + Store OBJECTRA and OBJECTDEC as sexigesimal strings.
+      + New Axis Lock feature to limit joystick to specific motion axis.
+      + INDI server now reaps zombie processes as they appear.
+      + EQMod support for AUX encoder values. ST4 Guide Rates settings. PPEC Switches.
+      + Fix for TELESCOPE_PIER_SIDE implementation in EQMod driver.
+      + Several fixes for Pulsar2 driver.
+      + Fix SER file generation for color frames. Added timestamps for each recorded frame. Support subframed video streams.
+      + Debug and Logging options can be saved in the config file.
+      + New CCD_TRANSFER_FORMAT property.
+      + libindi can now be compiled under MacOS and Cygwin. Non-Linux specific 3rd party drivers are also supported under MacOS and Cygwin.
+      + When a request for snooped is sent, it is echoed to drivers so that they send the snopped value immediately if it exists.
+      + libindi shared library is dropped. libindi now offsers indidriver (shared), indiclient (static), and indiclientqt5 (static) libraries.
+      + Legacy drivers removed: SkyCommander, Intelliscope, MagellanI, TruTech, SBIG STV
+
+From 1.3.0 to 1.3.1
+
+      + Support for Optec IFW Filter Wheel.
+      + Added new method in base client getBLOBMode to retrieve previously set BLOB mode for a device/property pair.
+      + QHY driver use software binning by default for all cameras.
+      + Minor bug fixes and improvements across all drivers.
+
+From 1.2.0 to 1.3.0
+
+      + Support for Shelyak eShel spectrograph.
+      + Support for NStep focuser.
+      + Support for ASI Filter Wheel.
+      + Support for OneStep Telescope Controller.
+      + Support for Moravian CCD driver.
+      + Support for  GigE machine vision cameras.
+      + Experimental SSAG CCD driver.
+      + Adding support for fast BLOB with ENCLEN. With Fast blob mode enabled, blob performance is now significantly faster.
+      + FITS Min/Max calculations are disabled by default to save processing time unless explicitly enabled by the user at compile time.
+      + Qt5 based client class is added to enable multiplatform client development.
+      + New significantly faster base64 encoding/decoding routines.
+      + Selectable alignment modes for INDI EQMod that includes built-in EQMod alignment and INDI Alignment Subsystem.
+      + CCD sequence queue number is no longer limited to 999.
+      + More Starlight Xpress CCDs cameras supported.
+      + Updated Starlight Xpress Adaptive Optics driver.
+      + Updated Temma Takahashi mount driver.
+      + Updated Apogee CCD driver.
+      + Updated QHY CCD driver with numerous fixes.
+      + Updated FLI CCD driver.
+      + Updated Pulasr2 driver.
+      + Updated ASI CCD with support for arm64 architecture, 1600 model and a lot more.
+      + Significant improvements to GPhoto driver including better support for Nikon DSLRs.
+      + Improved GPSd driver.
+      + New CCD_FILE_PATH property to indicate remote file path.
+      + New TELESCOPE_PIER_SIDE property.
+      + Dome & Telescope Scripting Gateway added.
+      + Added support for servos in Indiduino
+      + Fix BuiltinMathPlugin crash for Southern Hemisphere
+      + Add scope park aware feature to the rolloff roof simulator
+      + INDI Logs are now stored under ~/.indi/logs and arranged by date and time per driver.
+
+From 1.1.0 to 1.2.0
+
+      + Support for Davis Vantage Pro/Pro2/Vue Weather Station.
+      + Support for XAGYL Filter Wheel.
+      + Support for Optec Flip Flat.
+      + Support for Pulasr2 mount.
+      + Support for JMI Smart Focus.
+      + Support for GPS driver based on gpsd.
+      + 3rdParty: QHY Updates and Fixes. Color camera support.
+      + 3rdParty: GPhoto focus and live streaming fixes.
+      + 3rdParty: Starlight Xpress support for multiple identical devices and driver improvements.
+      + 3rdParty: ASI updated to latest SDK. Temperature readout for all cameras. ROI & Cooler fixes.
+      + FocusLynx: Support 2 focusers.
+      + Celestron: Support pulse guiding. Support hibernation and wakup on supported firmware.
+      + SynScan: Complete rewrite to support latest features in the firmware.
+      + GPhoto: Mirror lock support before capture.
+      + RoboFocus: Update to comply to INDI::Focus standards.
+      + SBIG: Support for connecting to Ethernet based CCDs.
+      + ZEQ25: Updates and fixes.
+      + MaxDomeII: Driver updated and tested under latest INDI::Dome standards.
+      + QSI: Added anti-blooming option.
+      + INDI WatchDog driver: Can be configured to perform observatory shutdown.
+      + EQMod: Initial support for INDI Alignment Subsystem. Do not stop motor in low speed (guiding issue).
+      + Temma: Complete rewrite based on INDI::Telescope and using INDI Alignment Subsystem.
+      + AutoDome park feature in Dome devices.
+      + Fix Crash on ODroid.
+      + Added Meta-Weather driver to aggregate weather data from multiple sources.
+      + Support for remotely controller dust caps and light box devices.
+      + Handle 16bit images in Rapid Guide mode.
+      + BaseClient non-blocking connect support.
+      + Unified Streaming/Recording support for multiple drivers (ASI/QHY/V4L2).
+
+From 1.0.0 to 1.1.0
+
+      + INDI::Weather for support of weather devices.
+      + INDI::GPS for support of GPS devices.
+      + WunderGround weather driver.
+      + Meade DSI I & II support.
+      + FocusLynx focuser support.
+      + PerfectStar focuser support.
+      + World Coordinate System (WCS) support in generated FITS.
+      + Updated Losmany driver.
+      + New Celestron driver.
+      + New IEQPro driver.
+      + Support for custom parking in dome drivers.
+      + Support Open Loop dome controllers.
+      + Various QHY CCD & Filter Wheel fixes and QHY OSX support.
+      + SBIG External Guide CCD fixes.
+      + Custom parking support for Celestron/Astrophysics/AstroElectronics/IEQPro
+      + Updated ASI ZWO drivers.
+      + Updated Apogee library. Improved NET support in INDI Apogee driver.
+      + Standarizing mount slew and track rates.
+      + Video4Linux 2 fixes and improvements: (16bpp pixel formats(Y16 and BYR2), pwc flashled, colorSpace/linearization, stacking), Simutaneous record/stream/exp. Stream rate divisor. Rec. file patterns.
+      + EQMod fixes: Keep tracking after joystick motion is stopped. Park initialization always set encoders.
+      + Improved support for drivers on ARM architecture.
+      + Improved logging capability.
+      + Deprecated: LX200Legacy and indimain library.
+
+From 0.9.9 to 1.0.0
+
+      + 3rdparty: Support for QHY CCDs and CFWs (BETA).
+      + 3rdparty: Support for Meade DSI (BETA).
+      + 3rdparty: Support for FFMV cameras.
+      + Support for STAR2000.
+      + Support for Baader dome.
+      + Support for Baader SteelDrive focuser.
+      + Support for dome slaving (BETA).
+      + Subframing and debayer support in GPhoto driver.
+      + Improved CFW handling and external tracking CCD for SBIG CCDs.
+      + Add debayer support for color cameras with user-configurable options. Debayer is performed at the client level.
+      + Fixed deinterlacing and subframing support in Starlight Xpress drivers.
+      + Fixed issues with joystick support in some drivers. Added joystick support to focuser and filter wheels.
+      + Improvements in generation of FITS header.
+      + Improvement in performance of some drivers under SBCs like Raspberry PI.
+      + Added fan and readout speed controls to QSI CCD.
+      + Fixed locale issue in INDI driver.
+      + Fixed regression in LX200Basic driver.
+      + Fixed issue with INDI Server resetting environment variable for skeleton and config files.
+      + Various fixes for loading/saving of user configuration.
+
+From 0.9.8 to 0.9.9
+
+      + Thread-safe INDI Library.
+      + Support for Rigelsys NFocus Focuser driver.
+      + 3rdparty: Additional VID/PID for QHY.
+      + 3rdparty: added USB Bandiwdth control for ZWO Optical cameras.
+      + 3rdparty: Updated and improved INDI Apogee driver and Apogee Library major update.
+      + 3rdparty: Live preview support for GPhoto driver. Tested on Canon.
+      + 3rdparty: Various bugfixes and improvements in INDI SBIG driver including working guide chip support.
+      + 3rdparty: Fixed time drift error in EQMod. Added Horizon limits. Added Backlash comp.
+      + Updated and improved Image Agent.
+      + Improved Astrophysics driver support.
+      + Fixed location bug in Celestron GPS driver.
+      + Additional information in FITS header such as filter name.
+      + Joystick support for focuser and filter wheel devices.
+      + Added option to enable local & remote save for FITS images in all CCD drivers.
+      + Older V4L driver is deprecated (indi_v4l_legacy) and is replaced by indi_v4l2_ccd
+      + V4L2: added recording (SER files) for use with Registax
+      + V4L2: added RGGB & UYVY pixel format support to V4L2 drivers.
+      + V4L2: fixed LX long exposure times.
+      + Updated and improved tutorials.
+      + Fixed few OSX compatibility issues.
+      + Various bug fixes and improvements.
+
+From 0.9.7 to 0.9.8
+
+      + Support for Telescope Alignment Subsystem Infrastructure. This includes an implementation of Markley's singular value decomposition (SVD) based algorithm for the computation of sky/telescope
+coordinate conversion transforms, in addition to multiple plugin support.
+      + Suppprt for SkyWatcherAPI Mount with Alignment Subsystem.
+      + Support for ZWO Optics ASI Cameras (3rd party)
+      + Support for AAG Cloud Watcher station (3rd Party).
+      + Support for MoonLite focusers.
+      + Support for Fishcamp CCDs (3rd Party).
+      + Support for Imager Agent.
+      + Improved EQMod driver including custom parking position.
+      + New and updated Astrophysics mount driver.
+      + New and updated QHY CCD Driver (3rd Party).
+      + New and improved GPhoto driver to support DSLRs.
+      + New and updated Video4Linux CCD Driver including support for long exposures (LX) and Imaging Source cameras.
+      + New and improved Apogee CCD driver.
+      + Improved support for SBIG CCDs including ST-I.
+      + Updated and improved TCFS Focuser drivers.
+      + Drivers migrated to libusb 1.0 framework.
+      + Rapid Guide Support for CCD Drivers.
+      + Improved compatibility with Mac OSX including INDI Server and GUI.
+      + Various bug fixes and improvements.
+
+From 0.9.6 to 0.9.7
+
+      + Support for EQMod mount driver (3rd party).
+      + Support for ATIK CCDs and Filter Wheels (3rd party).
+      + Support for Shoestring Astronomy FCUSB (3rd party).
+      + Support for joysticks and game pads under Linux.
+      + LX200, Celeston, and EQMod drivers support joystick input.
+      + Improved LX200 & Celestron telescope drivers.
+      + Improved simulator drivers.
+      + INDI server support for multiple devices per driver.
+      + New universal logging and debugging framework for INDI developers.
+      + Fixed an issue in TCFS driver where a connect may fail if focuser is put into sleep mode.
+      + Fixed an issue where the client thread in INDI::BaseClient is not being terminated gracefully in blocking mode.
+      + Fixed an issue involving non-English clients that utilize INDI client library to communicate with INDI server.
+      + Fixed an issue where some properties in some drivers are sent before getting defined by INDI.
+
+From 0.9.5 to 0.9.6
+
+      + Support for Starlight Xpress Adaptive Optics unit.
+      + Improved support for Startlight Xpress CCDs and Filter wheels.
+      + Support for Arduino boards, with customizable drivers for common observatory auxiliary devices.
+      + Support for GPUSB Guide Port Interface.
+      + Improved support for QSI CCDs and Filter wheels.
+      + Support for filters with absolute positioning.
+      + Support for cameras with guiding chip.
+      + Fixed INDI server FIFO CPU utilization bug.
+      + Fixed various bugs with v4l drivers due to code regression.
+      + Improved support for Mac OS X.
+      + Improved simulators.
+      + _REQUEST properties are now deprecated.
+      + Updated tutorials and API.
+
+From 0.9 to 0.95
+
+      # Focuser simulator driver.
+      # CCD, Telescope, Focuser, and Filter simulators improvements including periodic error effects, FWHM, and more.
+      # Major improvements to INDI Base Library and INDI Client Library.
+      # Fixed minor bugs in LX200 Generic, LX200 FS2, Magellan, and Celestron drivers.
+      # Minor bugfixes and improvements.
+
+From 0.8 to 0.9
+
+      # iEQ45 GoTo German Equatorial Mount Driver.
+      # INDI::Base drivers are now used for most classes of astrnomical instruments.
+      # New improved QSI CCD & Filter driver.
+      # New improved Starlight Xpress CCD & Filter driver.
+      # New improved RoboFocus driver.
+      # libboost is no longer required to build libindi.
+      # Numerous bug fixes and minor improvements.
+
+From 0.7.2 to 0.8
+
+      # TCF-S Focuser driver.
+      # Synscan Telescope driver.
+
+From 0.7.0 to 0.7.1
+
+      # Fixed change filter bug in true technology filter wheel. (JM)
+      # setINDI updated and improved. (ED)
+      # Improved INDI::Mediator functionality. (JM)
+      # Fixed buffer reading in INDI::BaseClient. (JM)
+      # Add new tutorial for INDI::BaseClient. (JM).
+
+From 0.6.2 to 0.7.0
+
+      # Dynamic renaming of drivers upon run time.
+      # Standard helper API to create and utilize INDI clients.
+      # Ability to load driver properties from an external XML file.
+      # Ability to write/read XML configuration files for driver values to be loaded at run time.
+      # Facilitating debugging and simulation of drivers.
+      # New C++ framework to facilitate the development of new INDI drivers.
+      # Several bug fixes for current drivers and framework.
+
+From 0.6.1 to 0.6.2
+
+        # Build related updates.
+
+From 0.6 to 0.6.1
+
+        # Updating drivers.xml to comply to new XML structure for group and devices metadata descriptions.
+
+From 0.5 to 0.6
+
+        # Devices:
+                + Astrophysics mount is now working.
+                + Apogee driver is now working.
+        # Features:
+                + New libindi structure to streamline development.
+                + Drivers using Standard Property _REQUEST WO to make requests. This facilitates scripting and automation of drivers.
+                + Updated inter-driver communication with INDI SNOOP.
+
+From 0.4 to 0.5
+
+        # Devices:
+                + True Technology Filter Wheel
+                + SBIG STV
+
+        # Features:
+             + Added INDI Observer pattern to enable flexible inter-driver communication.
+             + getINDI now supports BLOBs.
+             + LX200 Drivers use client timestamp to update the telescope internal clock. The old behavior was to use to system's time.
+             + Added a new INDI Standard Property: UTC_OFFSET.
+             + Dropping threaded INDI server in favor of the slightly better non-threaded version due to performance considerations.
+
+        # Bugs
+             + SBIG CCD driver was updated to fix problems with CFITSIO.
+             + Updated TTY API to include error reporting, in addition to fixing a few bugs.
+             + Fixed INDI Mac OSX Crash.
+
+        # Known Issues
+             + Astrophysics Mount driver (apmount) is not working. It is currently under new development and is intented to be released in the next version as it matures.
+             + Meade LPI exposure is locked to 1 second. The Video4Linux support for timed exposures is limited. A fix should be available in the next release.
+             + The SBIG driver does not allow autoguiding. When one selects the guider CCD, any exposure on the imaging CCD is cancelled and vice-versa.
+
+From v0.3 to v0.4:
+
+        # Devices:
+
+                + SBIG CCD
+                + SBIG CFW
+                + RoboFocus
+                + FLI Precision Focuser
+                + Orion Atlas / Sky Scan
+
+        # Other:
+                + Added more API documentation and revised existing documentation for accuracy and consistency.
+                + Fixed UTC correction bug in LX200 driver.
+                + Fixed pallete selection in V4L 2 drivers.
+                + Fixed bug in eventloop that can cause IE timers to crash.
+                + Added variable focus speed for Meade Autostar and GPS.
+                + Added CFITSIO, a mature and robust FITS library.
+                + New RS232 API for common access routines.
+
+From v0.2 to v0.3:
+
+        # Devices:
+                + Apogee CCD (Experimental)
+                + SkyCommander
+                + Temma Takahashi
+                + FLI Filter Wheel
+                + Meade Lunar Planetary Imager (Experimental)
+                + Astrophysics AP
+
+        # Other:
+                + Support for Video 4 Linux 2
+                + Multi-threaded INDI server
+                + Binary transfer via BLOB
+                + INDI scripting tools
+                + Various bug fixing
+
+INDI Library v1.1 conforms to INDI wire protocol v1.7
